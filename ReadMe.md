@@ -8,19 +8,35 @@ This led me to come up with a solution involving reading a set amount of sentenc
 
 Finally, I came up with the idea to put my software engineering skills to use and make and appllication that hopefully solves all these problems and will finally help me learn Dutch at the desired speed and ease. 
 
+## Tech Stack
+
+- **GUI:**
+- **Backend:** 
+- **Database:** 
+
 ## User Stories/Scenarios
 
 Within this application there is realistically only one user who for brevity we will just call ... User.
 
-
-- As a User I must be able to add new sentence pairs(an English sentence and its Dutch translation).
+- As a User I must be able to add new sentence pairs (an English sentence and its Dutch translation).
 - As a User I must be able to search for and modify a past sentence pair.
 - As a User I must be able to read series of random English sentences and then check the Dutch equivilant for each. 
 - As a User I must be able to toggle hide/show the Dutch equivilant of the sentence infinitely before moving to the next sentence pair.
 - As a User I don't want certain sentence pairs to be shown more often then others because then my coverage of the learning material won't be consistent. 
 
+## Use Cases
+
+
 ## Non-Functional Requirements 
+
 ## Functional Requirements 
+
+- The system shall use a database to save the sentence pairs. 
+- The system shall allow the user to manipulate this data (delete/modify sentence pairs)
+- The system shall have a GUI 
+- The system won't include any kind of login or auth 
+- The system will store how recently each sentence pairs has been presented to the User. 
+- The system will present with a new screen for each of the following functionalities: Deleting/Modifying an Existing Sentence Pair, Adding a New Sentence Pair and Revising the Sentence Pairs.
 
 ## Class Diagram
 ## Domain Model
