@@ -44,5 +44,7 @@ These will be the functions that are actually created and how each will work.
 - The system will present with a new screen for each of the following functionalities: Deleting/Modify an Existing Sentence Pair, Add a New Sentence Pair and Revise Sentence Pairs.
 
 ## Class Diagram
+
+
 ## Domain Model
 
