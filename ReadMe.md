@@ -11,7 +11,7 @@ Finally, I came up with the idea to put my software engineering skills to use an
 ## Tech Stack
 
 - **GUI:** PySide6 (QT)
-- **Logic:** 
+- **Logic:** Python 3.14 
 - **Database:** SQLite 
 
 ## User Stories/Scenarios
@@ -26,6 +26,11 @@ Within this application there is realistically only one user who for brevity we 
 
 ## Use Cases
 
+These will be the functions that are actually created and how each will work.
+
+- Delete/Modify an Existing Sentence Pair
+- Adding a New Sentence Pair
+- Revise Sentence Pairs
 
 ## Non-Functional Requirements 
 
@@ -36,7 +41,7 @@ Within this application there is realistically only one user who for brevity we 
 - The system shall have a GUI 
 - The system won't include any kind of login or auth 
 - The system will store how recently each sentence pairs has been presented to the User. 
-- The system will present with a new screen for each of the following functionalities: Deleting/Modifying an Existing Sentence Pair, Adding a New Sentence Pair and Revising the Sentence Pairs.
+- The system will present with a new screen for each of the following functionalities: Deleting/Modify an Existing Sentence Pair, Add a New Sentence Pair and Revise Sentence Pairs.
 
 ## Class Diagram
 ## Domain Model
