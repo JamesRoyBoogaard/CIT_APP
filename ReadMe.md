@@ -10,9 +10,9 @@ Finally, I came up with the idea to put my software engineering skills to use an
 
 ## Tech Stack
 
-- **GUI:**
-- **Backend:** 
-- **Database:** 
+- **GUI:** PySide6 (QT)
+- **Logic:** 
+- **Database:** SQLite 
 
 ## User Stories/Scenarios
 
@@ -20,7 +20,7 @@ Within this application there is realistically only one user who for brevity we 
 
 - As a User I must be able to add new sentence pairs (an English sentence and its Dutch translation).
 - As a User I must be able to search for and modify a past sentence pair.
-- As a User I must be able to read series of random English sentences and then check the Dutch equivilant for each. 
+- As a User I must be able to read series of random English sentences and then check the Dutch equivalent for each. 
 - As a User I must be able to toggle hide/show the Dutch equivilant of the sentence infinitely before moving to the next sentence pair.
 - As a User I don't want certain sentence pairs to be shown more often then others because then my coverage of the learning material won't be consistent. 
 
