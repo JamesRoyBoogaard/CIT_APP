@@ -70,6 +70,7 @@ These will be the functions that are actually created and how each will work and
                 2.1 The Sentence is already present in the saved sentence pairs.<br>
                 2.1.2 The User is informed that the sentence is already present in the saved pairs.<br>
                 2.1.3 The User is returned to step 2.<br>
+                <br/>
                 2.2 The User enters no sentence.<br>
                 2.2.2 The User is informed that nothing was entered.<br>
                 2.2.3 The User is return to step 2.<br>
