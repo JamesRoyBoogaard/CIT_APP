@@ -44,8 +44,11 @@ These will be the functions that are actually created and how each will work and
                     3.3 The User chooses to save what they have changed.
                     3.4 The stored sentence pairs are updated to reflece the change. 
 
-    - **Exceptions** 4. The new information is not present. 
-                     4. The new information is the same as the old
+    - **Exceptions** 4.1 The nenw sentence pair is missing a/both sentence/s from the sentence pair. 
+                     4.1.2 The User is informed that the sentence pair is not complete.
+
+                     4.2 The new information is the same as the old
+                     4.2.2 The User is informed that the sentence pair remains the unchanged. 
                     
 
 - Adding a New Sentence Pair
