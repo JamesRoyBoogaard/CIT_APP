@@ -84,7 +84,11 @@ These will be the functions that are actually created and how each will work and
     - **Scenario**:<br/>
                 1. The User chooses to revise. 
                 2. The User is prompted to choose a number of sentence pairs to revise. 
-                3. 
+                3. The User is presented with semi-random sentence pairs. 
+                4. FOREACH, the User first sees the Dutch sentence and then can choose to reveal English when they are ready.
+                5. The User then chooses to go to the next sentence pair when they have determined that they have adequately covered previous one. 
+                6. WHEN, the User has completed the number chosen at the beginning they are returned to step 1. 
+    - **Note**: The User sentence pairs presented to the User are determined by how frequently those pairs have been revised. The less frequently revised sentence pairs will be presented first.
 
     - **Extension**
 
