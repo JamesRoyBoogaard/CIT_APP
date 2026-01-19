@@ -55,10 +55,25 @@ These will be the functions that are actually created and how each will work and
                     
 
 - Adding a New Sentence Pair
-    - **Definition**: 
-    - **Scenario**
-    - **Extension**
-    - **Exceptions**
+
+    - **Definition**: The User adds a new sentence pair to the revisable sentence pairs. 
+
+    - **Scenario**:<br/> 
+                1. The User chooses to Add a new sentence pair.<br>
+                2. The User is prompted to enter the Dutch version of the sentence.<br>
+                3. The User is promped to enter the English version of the sentence.<br> 
+                4. The User chooses to save what they have added.<br>
+                5. The stored sentence pair are updated to reflect the change<br>
+
+    - **Extension**:<br/>
+    - **Exceptions**<br/>
+                2.1 The Sentence is already present in the saved sentence pairs.<br>
+                2.1.2 The User is informed that the sentence is already present in the saved pairs.<br>
+                2.1.3 The User is returned to step 2.<br>
+                2.2 The User enters no sentence.<br>
+                2.2.2 The User is informed that nothing was entered.<br>
+                2.2.3 The User is return to step 2.<br>
+
 - Revise Sentence Pairs
     - **Definition**
     - **Scenario**
