@@ -88,7 +88,7 @@ These will be the functions that are actually created and how each will work and
                 4. FOREACH, the User first sees the Dutch sentence and then can choose to reveal English when they are ready.<br>
                 5. The User then chooses to go to the next sentence pair when they have determined that they have adequately covered previous one.<br>
                 6. WHEN, the User has completed the number chosen at the beginning they are returned to step 1.<br>
-    - **Note**: The User sentence pairs presented to the User are determined by how frequently those pairs have been revised. The less frequently revised sentence pairs will be prioritised and presented first.<br> 
+        - **Note**: The User sentence pairs presented to the User are determined by how frequently those pairs have been revised. The less frequently revised sentence pairs will be prioritised and presented first.<br> 
 
     - **Extension**<br/>
 
