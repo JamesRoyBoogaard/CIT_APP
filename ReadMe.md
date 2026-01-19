@@ -28,7 +28,7 @@ Within this application there is realistically only one user who for brevity we 
 
 These will be the functions that are actually created and how each will work and progress.
 
-###  Delete/Modify an Existing Sentence Pair
+- Delete/Modify an Existing Sentence Pair
 
     - **Definition**: The User will delete a full sentence pair or modify part of said pair.
 
@@ -56,7 +56,7 @@ These will be the functions that are actually created and how each will work and
                     4.2.3 The User is returned to step4.<br>
                     
 
-### - Adding a New Sentence Pair
+- Adding a New Sentence Pair
 
     - **Definition**: The User adds a new sentence pair to the revisable sentence pairs. 
 
@@ -77,7 +77,7 @@ These will be the functions that are actually created and how each will work and
                 2.2.2 The User is informed that nothing was entered.<br>
                 2.2.3 The User is return to step 2.<br>
 
- ### Revise Sentence Pairs
+- Revise Sentence Pairs
     - **Definition**
     - **Scenario**
     - **Extension**
