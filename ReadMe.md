@@ -47,9 +47,8 @@ These will be the functions that are actually created and how each will work and
                     3.4 The stored sentence pairs are updated to reflece the change.<br>
 
     - **Exceptions**: <br>
-                    4.1 The new sentence pair is missing a(both) sentence(s) from the sentence pair.<br>  
                     4.1.2 The User is informed that the sentence pair is not complete.<br>
-                
+                    <br/>
                     4.2 The new information is the same as the old.<br>
                     4.2.2 The User is informed that the sentence pair remains the unchanged.<br>
                     
