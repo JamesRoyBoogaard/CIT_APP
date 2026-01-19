@@ -32,7 +32,7 @@ These will be the functions that are actually created and how each will work and
 
     - **Definition**: The User will delete a full sentence pair or modify part of said pair.
 
-    - **Scenario**: 1. The User chooses to Edit a sentence pair.
+    - **Scenario**: 1. The User chooses to Edit a sentence pair.<\n>
                     2. The User chooses a sentence pair.
                     3. The User opts to modify said sentence pair.
                     4. The User updates the sentence pair with different information. 
@@ -52,7 +52,7 @@ These will be the functions that are actually created and how each will work and
                     
 
 - Adding a New Sentence Pair
-    - **Definition**
+    - **Definition**: 
     - **Scenario**
     - **Extension**
     - **Exceptions**
