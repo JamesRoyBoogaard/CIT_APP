@@ -49,9 +49,11 @@ These will be the functions that are actually created and how each will work and
     - **Exceptions**: <br>
                     4.1 The User has removed one or both of the sentences. <br>
                     4.1.2 The User is informed that the sentence pair is not complete.<br>
+                    4.1.3 The User is returned to step 4.<br>
                     <br/>
                     4.2 The new information is the same as the old.<br>
                     4.2.2 The User is informed that the sentence pair remains the unchanged.<br>
+                    4.2.3 The User is returned to step4.<br>
                     
 
 - Adding a New Sentence Pair
