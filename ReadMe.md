@@ -78,9 +78,16 @@ These will be the functions that are actually created and how each will work and
                 2.2.3 The User is return to step 2.<br>
 
 - Revise Sentence Pairs
-    - **Definition**
-    - **Scenario**
+
+    - **Definition**: The User is presented with random sentence pairs and revises over a chosen number of them.<br>
+
+    - **Scenario**:<br/>
+                1. The User chooses to revise. 
+                2. The User is prompted to choose a number of sentence pairs to revise. 
+                3. 
+
     - **Extension**
+
     - **Exceptions**
 
 ## Non-Functional Requirements 
