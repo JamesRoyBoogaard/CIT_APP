@@ -91,13 +91,13 @@ These will be the functions that are actually created and how each will work and
         - **Note**: The User sentence pairs presented to the User are determined by how frequently those pairs have been revised. The less frequently revised sentence pairs will be prioritised and presented first.<br> 
 
     - **Extension**:<br/>
-                5.1 The User chooses to exit the exercise.
-                5.2 The User is returned to step 1. 
+                5.1 The User chooses to exit the exercise.<br>
+                5.2 The User is returned to step 1.<br> 
 
     - **Exceptions**:<br/>
-                2.1 The User chooses an invalid (negative/too big/character) number.
-                2.1.2 The User is informed that the number is invalid.
-                2.1.3 The User is returned to step 2.
+                2.1 The User chooses an invalid (negative/too big/character) number.<br>
+                2.1.2 The User is informed that the number is invalid.<br>
+                2.1.3 The User is returned to step 2.<br>
 
 ## Non-Functional Requirements 
 
