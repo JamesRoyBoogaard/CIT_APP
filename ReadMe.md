@@ -32,22 +32,22 @@ These will be the functions that are actually created and how each will work and
 
     - **Definition**: The User will delete a full sentence pair or modify part of said pair.
 
-    - **Scenario**: 1. The User chooses to Edit a sentence pair.<\n>
-                    2. The User chooses a sentence pair.
-                    3. The User opts to modify said sentence pair.
-                    4. The User updates the sentence pair with different information. 
-                    5. The User chooses to save what they have changed.
-                    6. The stored sentence pairs are updated to reflect the change.
+    - **Scenario**: 1. The User chooses to Edit a sentence pair.<br>
+                    2. The User chooses a sentence pair.<br>
+                    3. The User opts to modify said sentence pair.<br>
+                    4. The User updates the sentence pair with different information.<br> 
+                    5. The User chooses to save what they have changed.<br>
+                    6. The stored sentence pairs are updated to reflect the change.<br>
 
-    - **Extension** 3.1 The User opts to delete the sentence pair.
-                    3.2 The User deletes the sentence pair.
-                    3.3 The User chooses to save what they have changed.
-                    3.4 The stored sentence pairs are updated to reflece the change. 
+    - **Extension** 3.1 The User opts to delete the sentence pair.<br>
+                    3.2 The User deletes the sentence pair.<br>
+                    3.3 The User chooses to save what they have changed.<br>
+                    3.4 The stored sentence pairs are updated to reflece the change.<br>
 
-    - **Exceptions** 4.1 The nenw sentence pair is missing a/both sentence/s from the sentence pair. 
-                     4.1.2 The User is informed that the sentence pair is not complete.
-                     4.2 The new information is the same as the old
-                     4.2.2 The User is informed that the sentence pair remains the unchanged. 
+    - **Exceptions** 4.1 The nenw sentence pair is missing a/both sentence/s from the sentence pair.<br>  
+                     4.1.2 The User is informed that the sentence pair is not complete.<br>
+                     4.2 The new information is the same as the old.<br>
+                     4.2.2 The User is informed that the sentence pair remains the unchanged.<br>
                     
 
 - Adding a New Sentence Pair
