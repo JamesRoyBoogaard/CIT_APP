@@ -46,7 +46,6 @@ These will be the functions that are actually created and how each will work and
 
     - **Exceptions** 4.1 The nenw sentence pair is missing a/both sentence/s from the sentence pair. 
                      4.1.2 The User is informed that the sentence pair is not complete.
-
                      4.2 The new information is the same as the old
                      4.2.2 The User is informed that the sentence pair remains the unchanged. 
                     
