@@ -26,11 +26,38 @@ Within this application there is realistically only one user who for brevity we 
 
 ## Use Cases
 
-These will be the functions that are actually created and how each will work.
+These will be the functions that are actually created and how each will work and progress.
 
 - Delete/Modify an Existing Sentence Pair
+
+    - **Definition**: The User will delete a full sentence pair or modify part of said pair.
+
+    - **Scenario**: 1. The User chooses to Edit a sentence pair.
+                    2. The User chooses a sentence pair.
+                    3. The User opts to modify said sentence pair.
+                    4. The User updates the sentence pair with different information. 
+                    5. The User chooses to save what they have changed.
+                    6. The stored sentence pairs are updated to reflect the change.
+
+    - **Extension** 3.1 The User opts to delete the sentence pair.
+                    3.2 The User deletes the sentence pair.
+                    3.3 The User chooses to save what they have changed.
+                    3.4 The stored sentence pairs are updated to reflece the change. 
+
+    - **Exceptions** 4. The new information is not present. 
+                     4. The new information is the same as the old
+                    
+
 - Adding a New Sentence Pair
+    - **Definition**
+    - **Scenario**
+    - **Extension**
+    - **Exceptions**
 - Revise Sentence Pairs
+    - **Definition**
+    - **Scenario**
+    - **Extension**
+    - **Exceptions**
 
 ## Non-Functional Requirements 
 
