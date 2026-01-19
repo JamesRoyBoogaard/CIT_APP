@@ -56,7 +56,7 @@ These will be the functions that are actually created and how each will work and
                     4.2.3 The User is returned to step4.<br>
                     
 
-### Adding a New Sentence Pair
+### - Adding a New Sentence Pair
 
     - **Definition**: The User adds a new sentence pair to the revisable sentence pairs. 
 
