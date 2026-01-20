@@ -121,6 +121,9 @@ These will be the functions that are actually created and how each will work and
 ## ERD
 **Description**: The ERD(Entity Relationship Diagram) will be used, in this case, to show the planning for the database, its tables, their contents and relations. 
 
+## Class Diagram
+**Description**: This diagram will show all the classes and what data they share with eachother.
+
 ## GUI
 **Texture Pack Used**: UI User Interface Pack - Medieval - Mega Version by ToffeeCraft<br>
 **Theme**: In order too keep things interesting I will be using a medieval theme for this game. Seeing as it is just UI with no characters or anything I felt that this is an appropriate texture pack.<br> 
