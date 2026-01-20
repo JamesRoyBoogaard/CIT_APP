@@ -110,15 +110,12 @@ These will be the functions that are actually created and how each will work and
 - The system will store how recently each sentence pairs has been presented to the User. 
 - The system will present with a new screen for each of the following functionalities: Deleting/Modify an Existing Sentence Pair, Add a New Sentence Pair and Revise Sentence Pairs.
 
-## Class Diagram
-**Description**: This diagram will indicate the the different classes and how they interact.
-
 ## Domain Model
 **Description**: This diagram will show the different domains within the software and how they interact. Eg. Sentence pairs<br/>
 **Domains**:<br>
 - Sentence Pairs<br/>
         - ID<br>
-        - NumberOfTimesRevised<br>
+        - WhenLastRevised<br>
         - DutchSentence<br>
         - EnglishSentence<br>
 - Revision Session<br/>
