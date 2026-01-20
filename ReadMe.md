@@ -115,7 +115,7 @@ These will be the functions that are actually created and how each will work and
 **Domains**:<br>
 - Sentence Pairs<br/>
         - ID<br>
-        - WhenLastRevised<br>
+        - LastRevised<br>
         - DutchSentence<br>
         - EnglishSentence<br>
 ## ERD
