@@ -2,7 +2,7 @@
 
 ## Brief Description
 
-This is an application that will allow me to more efficiently learn Dutch. I believe in a mixture of comprehensible input from interesting sources (podcasts, tv shows, movies) and revising sentences sentences that are of use for you personally. I usually get these sentences from the comprehensable input and write them down to revise at a later date. Over and over again I have done this and found massive improvement in my Dutch. I, however, started running into problems with the length of the list of sentences I'm having to revise, spending double the amount of time revising as actually listening to the language.
+This is an application that will allow me to more efficiently learn Dutch. I believe in a mixture of comprehensible input from interesting sources (podcasts, tv shows, movies) and revising sentences that are of use for you personally. I usually get these sentences from the comprehensable input and write them down to revise at a later date. Over and over again I have done this and found massive improvement in my Dutch. I, however, started running into problems with the length of the list of sentences I'm having to revise, spending double the amount of time revising as actually listening to the language.
 
 This led me to come up with a solution involving reading a set amount of sentence that are both random but also trying to consistently cover all the sentences I have. Thus, not having complete randomness. I also have slowly become tired of the paper and the drawbacks it brings like wear and tear, the book becoming thick and uncomfortable to manuever and so on. 
 
