@@ -115,7 +115,7 @@ These will be the functions that are actually created and how each will work and
 
 ## Domain Model
 **Description**: This diagram will show the different domains within the software and how they interact. Eg. Sentence pairs<br/>
-**Domains**:<br/>
+**Domains**:<br>
 - Sentence Pairs<br/>
         - ID<br>
         - NumberOfTimesRevised<br>
