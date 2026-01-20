@@ -121,7 +121,6 @@ These will be the functions that are actually created and how each will work and
         - NumberOfTimesRevised<br>
         - DutchSentence<br>
         - EnglishSentence<br>
-<br/>
 - Revision Session<br/>
         - NumberOfSentencePairs<br>
         - OrderedSentencePairBuffer<br>
