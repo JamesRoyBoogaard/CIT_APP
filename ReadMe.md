@@ -119,7 +119,7 @@ These will be the functions that are actually created and how each will work and
         - DutchSentence<br>
         - EnglishSentence<br>
 ## ERD
-**Description**: The ERD(Entity Relationship Diagram) will be used, in this case, to show the single talbe within the DB just as a visual aid. 
+**Description**: The ERD(Entity Relationship Diagram) will be used, in this case, to show the single talbe within the DB just as a visual aid.<br> 
 ![SentencePairTable](Assets/MD_File_Images/SentencePairTable.png)
 
 ## Class Diagram
