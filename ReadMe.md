@@ -120,5 +120,5 @@ These will be the functions that are actually created and how each will work and
         - EnglishSentence<br>
 - Revision Session<br/>
         - NumberOfSentencePairs<br>
-        - OrderedSentencePairBuffer<br>
+        - queue(Ordered on WhenLastRevised)<br>
      
