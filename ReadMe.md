@@ -131,7 +131,7 @@ These will be the functions that are actually created and how each will work and
 ![UserFlowDiagram](Assets/MD_File_Images/UserFlowDiagram.png)
 
 ## Class Diagram
-**Description**: This diagram will show all the classes and what data they share with eachother.
+**Description**: This diagram will show all the classes and what data they share with eachother.<br/>
 ![ClassDiagram](Assets/MD_File_Images/ClassDiagram.png)
 
 ## GUI
