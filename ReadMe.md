@@ -125,13 +125,15 @@ These will be the functions that are actually created and how each will work and
 ![SentencePairTable](Assets/MD_File_Images/SentencePairTable.png)
 
 ## User Flow Diagram
-**Description**: The User Flow Diagram will reveal all the pages available to the user within the app, which use cases relate to each pages and how the user is able to actually navigate through the application itself.
+**Description**: The User Flow Diagram will reveal all the pages available to the user within the app, which use cases relate to each pages and how the user is able to actually navigate through the application itself.<br>
 <br/>
 **Relevant Diagram**<br/>
 ![UserFlowDiagram](Assets/MD_File_Images/UserFlowDiagram.png)
 
 ## Class Diagram
-**Description**: This diagram will show all the classes and what data they share with eachother.<br/>
+**Description**: This diagram will show all the classes and what data they share with eachother.<br>
+<br/>
+**Relevant Diagram**<br/>
 ![ClassDiagram](Assets/MD_File_Images/ClassDiagram.png)
 
 ## GUI
