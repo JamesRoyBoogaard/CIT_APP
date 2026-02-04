@@ -132,6 +132,7 @@ These will be the functions that are actually created and how each will work and
 
 ## Class Diagram
 **Description**: This diagram will show all the classes and what data they share with eachother.
+![ClassDiagram](Assets/MD_File_Images/ClassDiagram.png)
 
 ## GUI
 **Texture Pack Used**: UI User Interface Pack - Medieval - Mega Version by ToffeeCraft<br>
