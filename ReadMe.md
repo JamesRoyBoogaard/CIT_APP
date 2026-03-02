@@ -139,6 +139,7 @@ These will be the functions that are actually created and how each will work and
 ## GUI
 **Texture Pack Used**: UI User Interface Pack - Medieval - Mega Version by ToffeeCraft<br>
 **Theme**: In order too keep things interesting I will be using a medieval theme for this game. Seeing as it is just UI with no characters or anything I felt that this is an appropriate texture pack.<br> 
+**Description**: The following themese and designs for each page are not the final version but rather an indication of the general layout and theme that will be attmepted during this project.<br>
 ### HomePage
 ![ClassDiagram](Assets/MD_File_Images/home_page.png)<br/>
 ### RevisePage
