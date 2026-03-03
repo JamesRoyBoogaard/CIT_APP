@@ -10,11 +10,11 @@ def database_handler():
 
 def add_sentence_pair(sentence_pair):
     # Add sentence_pair to the db
-    return 0
+    return sentence_pair
 
 def remove_sentence_pair(sentence_pair_id):
     #remove the sentence pair from the database that has sentence_pair_id as its primary key
-    return 0
+    return sentence_pair_id
 
 def get_sentence_pairs(p_number_of_sentence_pairs):
     # return p_number_of_sentence_pairs of the least revised sentence pairs as a List<SentencePairs>
