@@ -1,12 +1,10 @@
 import sqlite3
 
-
 def database_handler():
     connection = sqlite3.connect("SentencePairs.db")
     cursor = connection.cursor()
     cursor.execute("Create Table If Not Exists sentence_pairs(ID INTEGER PRIMARY KEY, DutchSentence TEXT, EnglishSentence TEXT, LastReviewed DATETIME)")
     connection.close()
-
 
 def add_sentence_pair(sentence_pair):
     # Add sentence_pair to the db
