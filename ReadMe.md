@@ -121,19 +121,19 @@ These will be the functions that are actually created and how each will work and
 ## ERD
 **Description**: The ERD(Entity Relationship Diagram) will be used, in this case, to show the single talbe within the DB just as a visual aid.<br> 
 <br/>
-**Relevant Diagram**<br/>
+**Diagram**<br/>
 ![SentencePairTable](Assets/MD_File_Images/SentencePairTable.png)
 
 ## User Flow Diagram
 **Description**: The User Flow Diagram will reveal all the pages available to the user within the app, which use cases relate to each pages and how the user is able to actually navigate through the application itself.<br>
 <br/>
-**Relevant Diagram**<br/>
+**Diagram**<br/>
 ![UserFlowDiagram](Assets/MD_File_Images/UserFlowDiagram.png)
 
 ## Class Diagram
 **Description**: This diagram will show all the classes and what data they share with eachother.<br>
 <br/>
-**Relevant Diagram**<br/>
+**Diagram**<br/>
 ![ClassDiagram](Assets/MD_File_Images/ClassDiagramV2.png)
 
 ## GUI
@@ -141,11 +141,11 @@ These will be the functions that are actually created and how each will work and
 **Theme**: In order too keep things interesting I will be using a medieval theme for this game. Seeing as it is just UI with no characters or anything I felt that this is an appropriate texture pack.<br> 
 **Description**: The following themese and designs for each page are not the final version but rather an indication of the general layout and theme that will be attmepted during this project.<br>
 ### HomePage
-![ClassDiagram](Assets/MD_File_Images/home_page.png)<br/>
+![home_page](Assets/MD_File_Images/home_page.png)<br/>
 ### RevisePage
-![ClassDiagram](Assets/MD_File_Images/Revise_page.png)<br/>
+![revise_page](Assets/MD_File_Images/Revise_page.png)<br/>
 ### ModifyPage
-![ClassDiagram](Assets/MD_File_Images/Modify_page.png)<br/>
+![modify_page](Assets/MD_File_Images/Modify_page.png)<br/>
 ### AddPage
-![ClassDiagram](Assets/MD_File_Images/Add_page.png)<br/>
+![add_page](Assets/MD_File_Images/Add_page.png)<br/>
 
