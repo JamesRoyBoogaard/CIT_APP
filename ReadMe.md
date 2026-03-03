@@ -134,7 +134,7 @@ These will be the functions that are actually created and how each will work and
 **Description**: This diagram will show all the classes and what data they share with eachother.<br>
 <br/>
 **Relevant Diagram**<br/>
-![ClassDiagram](Assets/MD_File_Images/ClassDiagram.png)
+![ClassDiagram](Assets/MD_File_Images/ClassDiagramV2.png)
 
 ## GUI
 **Texture Pack Used**: UI User Interface Pack - Medieval - Mega Version by ToffeeCraft<br>
