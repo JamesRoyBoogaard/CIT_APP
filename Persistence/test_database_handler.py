@@ -64,18 +64,20 @@ class TestDatabaseHandler():
     
     def test_get_sentence_pair(self, populated_db):
         review_list = populated_db.get_sentence_pairs(3)
+        time_now = datetime.datetime.now()
         assert len(review_list) == 3
 
         # Check that the ids are 2,4,6 in that order
         expected_id_order = [2,4,6]
         for i in range(len(review_list)):
             assert review_list[i].ID == expected_id_order[i]
-            
-     
-
-    def test_get_sentence_pair_updated_time(self, populated_db):
-        # Check that the new dates on those three id are updated to the current date and time
-        assert False
         
+        placeholder = ",".join(["?"]*len(expected_id_order))
+
+        populated_db.cursor.execute("SELECT LastReviewed FROM sentence_pairs WHERE ID IN ("+placeholder+")",expected_id_order)
+        updated_dates = populated_db.cursor.fetchall()
+        
+        for rows_date in updated_dates:
+            assert str(rows_date)[2:-3] == str(time_now)[:-7]
 
         

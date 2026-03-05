@@ -39,7 +39,7 @@ class DatabaseHandler():
         rows_to_update = [row[0] for row in sentence_pairs]
         placeholder = ",".join(["?"] * len(rows_to_update))
         self.cursor.execute("""UPDATE sentence_pairs
-                    SET LastReviewed = CURRENT_TIMESTAMP
+                    SET LastReviewed = datetime('now','localtime')
                     WHERE ID IN (""" + placeholder +")", rows_to_update)
         self.connection.commit()
 
