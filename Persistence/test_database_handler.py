@@ -13,4 +13,6 @@ class TestDatabaseHandler():
 
     
     def test_persistence_handler_instantiate(self,db):
-        assert 0==0
+        db.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sentence_pairs'")
+        result = db.cursor.fetchall()
+        assert result is not None
