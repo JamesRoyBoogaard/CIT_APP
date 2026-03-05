@@ -30,16 +30,17 @@ class DatabaseHandler():
         review_list = []
         self.cursor.execute("""SELECT ID,DutchSentence,EnglishSentence,LastReviewed
                     FROM sentence_pairs 
-                    ORDER BY LastReviewed ASC 
+                    ORDER BY date(LastReviewed) ASC 
                     LIMIT ?"""
-                , p_number_of_sentence_pairs)
+                , str(p_number_of_sentence_pairs))
         sentence_pairs = self.cursor.fetchall()
+        print(sentence_pairs)
 
         rows_to_update = [row[0] for row in sentence_pairs]
         placeholder = ",".join(["?"] * len(rows_to_update))
         self.cursor.execute("""UPDATE sentence_pairs
                     SET LastReviewed = CURRENT_TIMESTAMP
-                    WHERE ID IN ({placeholder})""", rows_to_update)
+                    WHERE ID IN (""" + placeholder +")", rows_to_update)
         self.connection.commit()
 
         for ID, DutchSentence, EnglishSentence, LastReviewed in sentence_pairs:

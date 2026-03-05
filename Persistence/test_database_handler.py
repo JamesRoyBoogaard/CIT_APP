@@ -7,6 +7,7 @@ import datetime
 
 class TestDatabaseHandler():
 
+    #Setup
     @pytest.fixture
     def db(self):
         mem_db = DatabaseHandler(":memory:")
@@ -16,11 +17,11 @@ class TestDatabaseHandler():
     @pytest.fixture
     def populated_db(self, db):
         sentence_pairs = [SentencePair("Ik ga thuis", "I'm going home", '2026-03-05 12:30:40'),
-        SentencePair("Ik wil wat pasta", "I want some pasta", '2026-03-05 10:30:40'),
+        SentencePair("Ik wil wat pasta", "I want some pasta", '2026-01-05 10:30:40'),
         SentencePair("er zit eimand aan die kant", "There is someone sitting in that corner", '2026-04-05 12:30:40'),
-        SentencePair("Hoe heet je", "What is your name", '2026-03-05 12:20:40'),
+        SentencePair("Hoe heet je", "What is your name", '2026-01-05 11:20:40'),
         SentencePair("Toen ik 96 werd", "When I turned 96", '2026-03-05 12:30:30'),
-        SentencePair("Je waarschijnlijk geen sluetal toch", "You probably dont have a key right?", '2026-03-02 12:30:40'),
+        SentencePair("Je waarschijnlijk geen sluetal toch", "You probably dont have a key right?", '2026-01-05 12:30:40'),
         SentencePair("Er zijn hier zo veel mensen", "There are so many people here", '2026-03-05 12:30:10'),
         SentencePair("Ik hoevan oilifanten", "I love elephants", '2026-03-05 06:30:40')]
 
@@ -29,6 +30,7 @@ class TestDatabaseHandler():
             
         return db
     
+    #Tests
     def test_persistence_handler_instantiate(self,db):
         db.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sentence_pairs'")
         result = db.cursor.fetchall()
@@ -54,7 +56,22 @@ class TestDatabaseHandler():
         populated_db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
         num_sentence_pairs_in_db = populated_db.cursor.fetchone()
         assert num_sentence_pairs_in_db == (7,)
+
+        populated_db.remove_sentence_pair(2)
+        populated_db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
+        num_sentence_pairs_in_db = populated_db.cursor.fetchone()
+        assert num_sentence_pairs_in_db == (6,)
     
     def test_get_sentence_pair(self, populated_db):
-        assert 0==1
+        review_list = populated_db.get_sentence_pairs(3)
+        assert len(review_list) == 3
+
+        # Check that the ids are 2,4,6 in that order
+        assert False
+
+    def test_get_sentence_pair_updated_time(self, populated_db):
+        # Check that the new dates on those three id are updated to the current date and time
+        assert False
+        
+
         
