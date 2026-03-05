@@ -3,3 +3,7 @@ env/
 venv/
 ENV/
 Assets/Raw_Assets/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
