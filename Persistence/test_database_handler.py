@@ -1,5 +1,4 @@
 import pytest
-#import database_handlerDa
 import sqlite3
 from database_handler import DatabaseHandler
 from SentencePair import SentencePair
