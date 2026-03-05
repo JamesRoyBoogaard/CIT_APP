@@ -10,13 +10,19 @@ class LogicController():
         self.db_handler = DatabaseHandler()
         
     def update_sentence_pairs(self, ID, new_sentence_pair):
-        return 0
+        self.db_handler.remove_sentence_pair(ID)
+        self.db_handler.add_sentence_pair(new_sentence_pair)
+        self.db_handler.close()
     
     def delete_sentence_pairs(self, ID):
-        return 0
-    
-    def add_sentence_pair(new_sentence_pair):
-        return 0
-    
-    def revise(number_sentences):
-        return 0
+        self.db_handler.remove_sentence_pair(ID)
+        self.db_handler.close()
+
+    def add_sentence_pair(self, new_sentence_pair):
+        self.db_handler.add_sentence_pair(new_sentence_pair)
+        self.db_handler.close()
+
+    def revise(self, number_sentences):
+        revision_list = self.db_handler.get_sentence_pairs(number_sentences)
+        self.db_handler.close()
+        return revision_list
