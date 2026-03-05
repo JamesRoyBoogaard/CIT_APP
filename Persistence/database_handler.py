@@ -25,7 +25,26 @@ def remove_sentence_pair(self, sentence_pair_id):
 
 def get_sentence_pairs(self, p_number_of_sentence_pairs):
     # return p_number_of_sentence_pairs of the least revised sentence pairs as a List<SentencePairs>
-    return p_number_of_sentence_pairs
+    review_list = []
+    self.cursor.execute("""SELECT ID,DutchSentence,EnglishSentence,LastReviewed
+                FROM sentence_pairs 
+                ORDER BY LastReviewed ASC 
+                LIMIT ?"""
+            , p_number_of_sentence_pairs)
+    sentence_pairs = self.cursor.fetchall()
+
+    rows_to_update = [row[0] for row in sentence_pairs]
+    placeholder = ",".join(["?"] * len(rows_to_update))
+    self.cursor.execute("""UPDATE sentence_pairs
+                SET LastReviewed = CURRENT_TIMESTAMP
+                WHERE ID IN ({placeholder})""", rows_to_update)
+    self.connection.commit()
+
+    for ID, DutchSentence, EnglishSentence, LastReviewed in sentence_pairs:
+        sentence_pair = SentencePair(ID,DutchSentence,EnglishSentence,LastReviewed)
+        review_list.append(sentence_pair)
+
+    return review_list
 
 def close(self):
     self.connection.close()
