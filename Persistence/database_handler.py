@@ -44,7 +44,7 @@ class DatabaseHandler():
         self.connection.commit()
 
         for ID, DutchSentence, EnglishSentence, LastReviewed in sentence_pairs:
-            sentence_pair = SentencePair(ID,DutchSentence,EnglishSentence,LastReviewed)
+            sentence_pair = SentencePair(DutchSentence,EnglishSentence,LastReviewed,ID)
             review_list.append(sentence_pair)
 
         return review_list

@@ -67,7 +67,11 @@ class TestDatabaseHandler():
         assert len(review_list) == 3
 
         # Check that the ids are 2,4,6 in that order
-        assert False
+        expected_id_order = [2,4,6]
+        for i in range(len(review_list)):
+            assert review_list[i].ID == expected_id_order[i]
+            
+     
 
     def test_get_sentence_pair_updated_time(self, populated_db):
         # Check that the new dates on those three id are updated to the current date and time
