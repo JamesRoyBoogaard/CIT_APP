@@ -36,13 +36,25 @@ class TestDatabaseHandler():
 
     def test_add_sentence_pair(self, db):
         db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
-        num_sentences_in_db = db.cursor.fetchone()
-        #print(num_sentences_in_db)
-        assert num_sentences_in_db == (0,)
+        num_sentence_pairs_in_db = db.cursor.fetchone()
+        assert num_sentence_pairs_in_db == (0,)
 
         sentence = SentencePair("Hoe heet je", "What is your name", '2026-03-05 12:20:40')
         db.add_sentence_pair(sentence)
         db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
-        num_sentences_in_db = db.cursor.fetchone()
-        assert num_sentences_in_db == (1,)
+        num_sentence_pairs_in_db = db.cursor.fetchone()
+        assert num_sentence_pairs_in_db == (1,)
+
+    def test_remove_sentence_pair(self, populated_db):
+        populated_db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
+        num_sentence_pairs_in_db = populated_db.cursor.fetchone()
+        assert num_sentence_pairs_in_db == (8,)
+
+        populated_db.remove_sentence_pair(1)
+        populated_db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
+        num_sentence_pairs_in_db = populated_db.cursor.fetchone()
+        assert num_sentence_pairs_in_db == (7,)
+    
+    def test_get_sentence_pair(self, populated_db):
+        assert 0==1
         
