@@ -16,7 +16,7 @@ class DatabaseHandler():
         LastReviewed = sentence_pair.LastReviewed
 
         new_tuple = (DutchSentence,EnglishSentence,LastReviewed)
-        self.cursor.execute("INSERT INTO sentence_pairs VALUES (?,?,?)", new_tuple)
+        self.cursor.execute("INSERT INTO sentence_pairs (DutchSentence, EnglishSentence, LastReviewed) VALUES (?,?,?)", new_tuple)
         self.connection.commit()
         
 

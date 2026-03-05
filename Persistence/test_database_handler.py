@@ -35,12 +35,14 @@ class TestDatabaseHandler():
         assert result is not None
 
     def test_add_sentence_pair(self, db):
-        #num_sentences_in_db = db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
-        #assert num_sentences_in_db == 0
+        db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
+        num_sentences_in_db = db.cursor.fetchone()
+        #print(num_sentences_in_db)
+        assert num_sentences_in_db == (0,)
 
         sentence = SentencePair("Hoe heet je", "What is your name", '2026-03-05 12:20:40')
         db.add_sentence_pair(sentence)
-
-        num_sentences_in_db = db.cursor.execute("SELECT COUNT(ID) FROM sentenc_pairs")
-        assert num_sentences_in_db == 1
+        db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
+        num_sentences_in_db = db.cursor.fetchone()
+        assert num_sentences_in_db == (1,)
         
