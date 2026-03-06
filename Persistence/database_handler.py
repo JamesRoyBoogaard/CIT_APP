@@ -1,9 +1,12 @@
 import sqlite3
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from SentencePair import SentencePair
 
 class DatabaseHandler():
 
-    def __init__(self, db_pth = "SentencePairs.db"):
+    def __init__(self, db_pth = "Persistence/SentencePairs.db"):
         self.connection = sqlite3.connect(db_pth)
         self.cursor = self.connection.cursor()
         self.cursor.execute("Create Table If Not Exists sentence_pairs(ID INTEGER PRIMARY KEY AUTOINCREMENT, DutchSentence TEXT, EnglishSentence TEXT, LastReviewed DATETIME)")
@@ -19,9 +22,14 @@ class DatabaseHandler():
         EnglishSentence = sentence_pair.EnglishSentence
         LastReviewed = sentence_pair.LastReviewed
 
-        new_tuple = (DutchSentence,EnglishSentence,LastReviewed)
-        self.cursor.execute("INSERT INTO sentence_pairs (DutchSentence, EnglishSentence, LastReviewed) VALUES (?,?,?)", new_tuple)
-        self.connection.commit()
+        if(LastReviewed == None):
+            new_tuple = (DutchSentence,EnglishSentence)
+            self.cursor.execute("INSERT INTO sentence_pairs (DutchSentence, EnglishSentence, LastReviewed) VALUES (?,?,datetime('now','localtime'))", new_tuple)
+            self.connection.commit()
+        else:
+            new_tuple = (DutchSentence,EnglishSentence,LastReviewed)
+            self.cursor.execute("INSERT INTO sentence_pairs (DutchSentence, EnglishSentence, LastReviewed) VALUES (?,?,?)", new_tuple)
+            self.connection.commit()
         
 
     def remove_sentence_pair(self, sentence_pair_id):

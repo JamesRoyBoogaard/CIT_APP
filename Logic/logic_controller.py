@@ -8,7 +8,7 @@ from Persistence.database_handler import DatabaseHandler
 class LogicController():
 
     def __init__(self):
-        self.db_handler = DatabaseHandler()
+        self.db_handler = DatabaseHandler(db_pth = "SentencePairs.db")
     
     # def __init__(self, string):
     #     self.db_handler = DatabaseHandler(db_pth=":memory:")
