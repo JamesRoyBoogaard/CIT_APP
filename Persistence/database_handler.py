@@ -25,11 +25,11 @@ class DatabaseHandler():
         if(LastReviewed == None):
             new_tuple = (DutchSentence,EnglishSentence)
             self.cursor.execute("INSERT INTO sentence_pairs (DutchSentence, EnglishSentence, LastReviewed) VALUES (?,?,datetime('now','localtime'))", new_tuple)
-            self.connection.commit()
         else:
             new_tuple = (DutchSentence,EnglishSentence,LastReviewed)
             self.cursor.execute("INSERT INTO sentence_pairs (DutchSentence, EnglishSentence, LastReviewed) VALUES (?,?,?)", new_tuple)
-            self.connection.commit()
+            
+        self.connection.commit()
         
 
     def remove_sentence_pair(self, sentence_pair_id):

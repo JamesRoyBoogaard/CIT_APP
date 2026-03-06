@@ -24,6 +24,11 @@ class TestLogicController():
         mem_db.close()
 
     @pytest.fixture
+    def logic_controller(self,db):
+        logic_controller = LogicController(db)
+        yield logic_controller
+
+    @pytest.fixture
     def populated_db(self, db):
         sentence_pairs = [SentencePair("Ik ga thuis", "I'm going home", '2026-03-05 12:30:40'),
         SentencePair("Ik wil wat pasta", "I want some pasta", '2026-01-05 10:30:40'),
@@ -56,14 +61,13 @@ class TestLogicController():
     # def test_delete_sentence_pairs(self):
     #     assert False
 
-    def test_add_sentence_pair(self, db):
-        logic_controller = LogicController()
+    def test_add_sentence_pair(self, db, logic_controller):
 
         db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
         initial_result = db.cursor.fetchone()
         assert initial_result == (0,)
 
-        sp = SentencePair("eish", "eish", '2026-03-05 12:30:40')
+        sp = SentencePair("testen", "testing")
         logic_controller.add_sentence_pair(sp)
 
         db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")

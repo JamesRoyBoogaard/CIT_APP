@@ -7,9 +7,11 @@ from Persistence.database_handler import DatabaseHandler
 
 class LogicController():
 
-    def __init__(self):
-        self.db_handler = DatabaseHandler(db_pth = "SentencePairs.db")
-    
+    def __init__(self, p_db_handler = None):
+        if p_db_handler == None:
+            self.db_handler = DatabaseHandler()
+        else:
+            self.db_handler = p_db_handler
     # def __init__(self, string):
     #     self.db_handler = DatabaseHandler(db_pth=":memory:")
         
@@ -24,7 +26,7 @@ class LogicController():
 
     def add_sentence_pair(self, new_sentence_pair):
         self.db_handler.add_sentence_pair(new_sentence_pair)
-        self.db_handler.close()
+#        self.db_handler.close()
 
     def revise(self, number_sentences):
         revision_list = self.db_handler.get_sentence_pairs(number_sentences)
