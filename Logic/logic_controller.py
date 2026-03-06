@@ -8,6 +8,9 @@ class LogicController():
 
     def __init__(self):
         self.db_handler = DatabaseHandler()
+    
+    def __init__(self, string):
+        self.db_handler = DatabaseHandler(db_pth=":memory:")
         
     def update_sentence_pairs(self, ID, new_sentence_pair):
         self.db_handler.remove_sentence_pair(ID)

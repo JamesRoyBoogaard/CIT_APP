@@ -8,6 +8,10 @@ class DatabaseHandler():
         self.cursor = self.connection.cursor()
         self.cursor.execute("Create Table If Not Exists sentence_pairs(ID INTEGER PRIMARY KEY AUTOINCREMENT, DutchSentence TEXT, EnglishSentence TEXT, LastReviewed DATETIME)")
         
+    # def __init__(self, test_string, db_pth = ":memory:"):
+    #     self.connection = sqlite3.connect(db_pth)
+    #     self.cursor = self.connection.cursor()
+    #     self.cursor.execute("Create Table If Not Exists sentence_pairs(ID INTEGER PRIMARY KEY AUTOINCREMENT, DutchSentence TEXT, EnglishSentence TEXT, LastReviewed DATETIME)")
 
     def add_sentence_pair(self, sentence_pair):
         # Add sentence_pair to the db
@@ -24,6 +28,10 @@ class DatabaseHandler():
         #remove the sentence pair from the database that has sentence_pair_id as its primary key
         self.cursor.execute("DELETE FROM sentence_pairs WHERE ID = ?", str(sentence_pair_id))
         self.connection.commit()
+    
+    def get_all_sentence_pair(self):
+        # Retrieve all the sentence pairs within the db at that moment which can then be later scrolled through on modify page
+        return 0
 
     def get_sentence_pairs(self, p_number_of_sentence_pairs):
         # return p_number_of_sentence_pairs of the least revised sentence pairs as a List<SentencePairs>
