@@ -42,7 +42,6 @@ class DatabaseHandler():
                     LIMIT ?"""
                 , str(p_number_of_sentence_pairs))
         sentence_pairs = self.cursor.fetchall()
-        print(sentence_pairs)
 
         rows_to_update = [row[0] for row in sentence_pairs]
         placeholder = ",".join(["?"] * len(rows_to_update))

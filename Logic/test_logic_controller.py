@@ -56,19 +56,20 @@ class TestLogicController():
     # def test_delete_sentence_pairs(self):
     #     assert False
 
-    def test_add_sentence_pair(self, populated_db):
+    def test_add_sentence_pair(self, db):
         logic_controller = LogicController()
 
-        populated_db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
-        initial_result = populated_db.cursor.fetchall()
+        db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
+        initial_result = db.cursor.fetchone()
+        assert initial_result == (0,)
 
         sp = SentencePair("eish", "eish", '2026-03-05 12:30:40')
         logic_controller.add_sentence_pair(sp)
 
-        populated_db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
-        new_result = populated_db.cursor.fetchall()
-
-        assert initial_result < new_result
+        db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
+        new_result = db.cursor.fetchone()
+        assert new_result == (1,)
+       
 
     # def test_revise(self):
     #     assert False
