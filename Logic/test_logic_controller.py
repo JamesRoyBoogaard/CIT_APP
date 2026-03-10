@@ -56,8 +56,15 @@ class TestLogicController():
         assert result == [("Ik wil wat pasta","testen")]
        
     
-    # def test_delete_sentence_pairs(self):
-    #     assert False
+    def test_delete_sentence_pairs(self,populated_db, logic_controller):
+        populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID = 1")
+        result = populated_db.cursor.fetchone()
+        assert result == ("Ik ga thuis",)
+        logic_controller.delete_sentence_pair(1)
+
+        populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID = 1")
+        result = populated_db.cursor.fetchone()
+        assert result == ("Ik wil wat pasta",)
 
     def test_add_sentence_pair(self, db, logic_controller):
 
@@ -73,7 +80,8 @@ class TestLogicController():
         assert new_result == (1,)
        
 
-    # def test_revise(self):
-    #     assert False
+    def test_revise(self):
+        assert False
     
-    # def test_get_all_sentence_pairs(self):
+    def test_get_all_sentence_pairs(self):
+        assert False
