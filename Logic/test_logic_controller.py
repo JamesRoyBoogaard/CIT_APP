@@ -10,12 +10,6 @@ from SentencePair import SentencePair
 
 class TestLogicController():
 
-    # @pytest.fixture
-    # def proxy_db(self):
-    #     test_database_handler = TestDatabaseHandler()
-    #     db = test_database_handler.populated_db
-    #     yield db
-
     #Setup
     @pytest.fixture
     def db(self):
@@ -43,20 +37,24 @@ class TestLogicController():
             db.add_sentence_pair(sentence)
             
         return db
-    
-    # @pytest.fixture
-    # def logic_controller_supplier(self):
-    #     logic_controller = LogicController()
-    #     return logic_controller
 
     def test_memory_db(self, populated_db):
         populated_db.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sentence_pairs'")
         result = populated_db.cursor.fetchall()
         assert result is not None
 
-    # def test_update_sentence_pairs(self):
+    def test_update_sentence_pairs(self, populated_db, logic_controller):
+        populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID = 1")
+        result = populated_db.cursor.fetchone()
+        assert result == ("Ik ga thuis",)
 
-    #     assert False
+        sp = SentencePair("testen", "testing")
+        logic_controller.update_sentence_pairs(1, sp)
+
+        populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID IS (1,8)")
+        result = populated_db.cursor.fetchall()
+        assert result == [("Ik wil wat pasta","testen")]
+       
     
     # def test_delete_sentence_pairs(self):
     #     assert False
