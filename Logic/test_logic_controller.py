@@ -6,6 +6,7 @@ from logic_controller import LogicController
 from Persistence.test_database_handler import TestDatabaseHandler
 from Persistence.database_handler import DatabaseHandler
 from SentencePair import SentencePair
+import datetime
 
 
 class TestLogicController():
@@ -42,6 +43,14 @@ class TestLogicController():
         populated_db.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sentence_pairs'")
         result = populated_db.cursor.fetchall()
         assert result is not None
+        populated_db.close()
+
+    def test_close(self, db, logic_controller):
+        db.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sentence_pairs'")
+        result = db.cursor.fetchall()
+        assert result is not None
+        logic_controller.close()
+        assert result is None
 
     def test_update_sentence_pairs(self, populated_db, logic_controller):
         populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID = 1")
@@ -54,6 +63,7 @@ class TestLogicController():
         populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID IS (1,8)")
         result = populated_db.cursor.fetchall()
         assert result == [("Ik wil wat pasta","testen")]
+        logic_controller.close()
        
     
     def test_delete_sentence_pairs(self,populated_db, logic_controller):
@@ -65,6 +75,7 @@ class TestLogicController():
         populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID = 1")
         result = populated_db.cursor.fetchone()
         assert result == ("Ik wil wat pasta",)
+        logic_controller.close()
 
     def test_add_sentence_pair(self, db, logic_controller):
 
@@ -78,10 +89,36 @@ class TestLogicController():
         db.cursor.execute("SELECT COUNT(ID) FROM sentence_pairs")
         new_result = db.cursor.fetchone()
         assert new_result == (1,)
-       
+        logic_controller.close()
 
-    def test_revise(self):
-        assert False
+    def test_revise(self, populated_db, logic_controller):
+        test_list = populated_db.get_sentence_pairs(3)
+        logic_list = logic_controller.revise(3)
+        time_now = datetime.datetime.now()
+        assert len(test_list) == 3 and len(logic_list) == 3
+
+        # Check that the ids are 2,4,6 in that order
+        expected_id_order = [2,4,6]
+        for i in range(len(logic_list)):
+            print(str(logic_list[i].LastReviewed))
+            print(str(logic_list[i].DutchSentence))
+            assert logic_list[i].ID == expected_id_order[i]
+        
+        placeholder = ",".join(["?"]*len(expected_id_order))
+
+        populated_db.cursor.execute("SELECT LastReviewed FROM sentence_pairs WHERE ID IN ("+placeholder+")",expected_id_order)
+        updated_dates = populated_db.cursor.fetchall()
+        
+        for rows_date in updated_dates:
+            assert str(rows_date)[2:-3] == str(time_now)[:-7]
+        logic_controller.close()
+        
     
-    def test_get_all_sentence_pairs(self):
-        assert False
+    def test_get_all_sentence_pairs(self, populated_db, logic_controller):
+        all_sentences = logic_controller.get_all_sentence_pairs()
+        all_sentence_pairs_comparison = populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs")
+
+        i = 0
+        for dutch_sentence in all_sentence_pairs_comparison: 
+            assert dutch_sentence == all_sentences[i].DutchSentence
+            i = i + 1
