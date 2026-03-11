@@ -39,7 +39,15 @@ class DatabaseHandler():
     
     def get_all_sentence_pair(self):
         # Retrieve all the sentence pairs within the db at that moment which can then be later scrolled through on modify page
-        return 0
+        return_list = []
+        self.cursor.execute("SELECT * FROM sentence_pairs")
+        all_sentence_pairs = self.cursor.fetchall
+        
+        for ID, DutchSentence, EnglishSentence, LastReviewed in all_sentence_pairs:
+            sentence_pair = SentencePair(DutchSentence, EnglishSentence, LastReviewed, ID)
+            return_list.append(sentence_pair)
+
+        return return_list 
 
     def get_sentence_pairs(self, p_number_of_sentence_pairs):
         # return p_number_of_sentence_pairs of the least revised sentence pairs as a List<SentencePairs>
