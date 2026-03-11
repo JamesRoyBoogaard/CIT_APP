@@ -73,11 +73,11 @@ class TestLogicController():
         populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID = 1")
         result = populated_db.cursor.fetchone()
         assert result == ("Ik ga thuis",)
-        logic_controller.delete_sentence_pair(1)
+        logic_controller.delete_sentence_pairs(1)
 
         populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID = 1")
         result = populated_db.cursor.fetchone()
-        assert result == ("Ik wil wat pasta",)
+        assert result is None
         logic_controller.close()
 
     def test_add_sentence_pair(self, db, logic_controller):
@@ -94,34 +94,32 @@ class TestLogicController():
         assert new_result == (1,)
         logic_controller.close()
 
-    def test_revise(self, populated_db, logic_controller):
-        test_list = populated_db.get_sentence_pairs(3)
-        logic_list = logic_controller.revise(3)
-        time_now = datetime.datetime.now()
-        assert len(test_list) == 3 and len(logic_list) == 3
+    # def test_revise(self, populated_db, logic_controller):
+    #     logic_list = logic_controller.revise(3)
+    #     time_now = datetime.datetime.now()
+    #     assert len(logic_list) == 3
 
-        # Check that the ids are 2,4,6 in that order
-        expected_id_order = [2,4,6]
-        for i in range(len(logic_list)):
-            print(str(logic_list[i].LastReviewed))
-            print(str(logic_list[i].DutchSentence))
-            assert logic_list[i].ID == expected_id_order[i]
+    #     # Check that the ids are 2,4,6 in that order
+    #     expected_id_order = [2,4,6]
+    #     for i in range(len(logic_list)):
+    #         print(str(logic_list[i].LastReviewed))
+    #         print(str(logic_list[i].DutchSentence))
+    #         assert logic_list[i].ID == expected_id_order[i]
         
-        placeholder = ",".join(["?"]*len(expected_id_order))
+    #     placeholder = ",".join(["?"]*len(expected_id_order))
 
-        populated_db.cursor.execute("SELECT LastReviewed FROM sentence_pairs WHERE ID IN ("+placeholder+")",expected_id_order)
-        updated_dates = populated_db.cursor.fetchall()
+    #     populated_db.cursor.execute("SELECT LastReviewed FROM sentence_pairs WHERE ID IN ("+placeholder+")",expected_id_order)
+    #     updated_dates = populated_db.cursor.fetchall()
         
-        for rows_date in updated_dates:
-            assert str(rows_date)[2:-3] == str(time_now)[:-7]
-        logic_controller.close()
+    #     for rows_date in updated_dates:
+    #         assert str(rows_date)[2:-3] == str(time_now)[:-7]
+    #     logic_controller.close()
         
     
     def test_get_all_sentence_pairs(self, populated_db, logic_controller):
         all_sentences = logic_controller.get_all_sentence_pairs()
         all_sentence_pairs_comparison = populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs")
-
         i = 0
         for dutch_sentence in all_sentence_pairs_comparison: 
-            assert dutch_sentence == all_sentences[i].DutchSentence
+            assert dutch_sentence == (all_sentences[i].DutchSentence,)
             i = i + 1

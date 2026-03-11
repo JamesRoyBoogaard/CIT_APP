@@ -36,11 +36,11 @@ class DatabaseHandler():
         self.cursor.execute("DELETE FROM sentence_pairs WHERE ID = ?", (sentence_pair_id,))
         self.connection.commit()
     
-    def get_all_sentence_pair(self):
+    def get_all_sentence_pairs(self):
         # Retrieve all the sentence pairs within the db at that moment which can then be later scrolled through on modify page
         return_list = []
         self.cursor.execute("SELECT * FROM sentence_pairs")
-        all_sentence_pairs = self.cursor.fetchall
+        all_sentence_pairs = self.cursor.fetchall()
         
         for ID, DutchSentence, EnglishSentence, LastReviewed in all_sentence_pairs:
             sentence_pair = SentencePair(DutchSentence, EnglishSentence, LastReviewed, ID)
