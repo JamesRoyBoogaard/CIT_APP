@@ -7,6 +7,7 @@ from Persistence.test_database_handler import TestDatabaseHandler
 from Persistence.database_handler import DatabaseHandler
 from SentencePair import SentencePair
 import datetime
+import sqlite3
 
 
 class TestLogicController():
@@ -32,7 +33,7 @@ class TestLogicController():
         SentencePair("Toen ik 96 werd", "When I turned 96", '2026-03-05 12:30:30'),
         SentencePair("Je waarschijnlijk geen sluetal toch", "You probably dont have a key right?", '2026-01-05 12:30:40'),
         SentencePair("Er zijn hier zo veel mensen", "There are so many people here", '2026-03-05 12:30:10'),
-        SentencePair("Ik hoevan oilifanten", "I love elephants", '2026-03-05 06:30:40')]
+        SentencePair("Ik hoe van oilifanten", "I love elephants", '2026-03-05 06:30:40')]
 
         for sentence in sentence_pairs:
             db.add_sentence_pair(sentence)
@@ -50,7 +51,9 @@ class TestLogicController():
         result = db.cursor.fetchall()
         assert result is not None
         logic_controller.close()
-        assert result is None
+        with pytest.raises(sqlite3.ProgrammingError):
+            db.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sentence_pairs'")
+            result = db.cursor.fetchall()
 
     def test_update_sentence_pairs(self, populated_db, logic_controller):
         populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID = 1")
@@ -60,9 +63,9 @@ class TestLogicController():
         sp = SentencePair("testen", "testing")
         logic_controller.update_sentence_pairs(1, sp)
 
-        populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID IN (1,8)")
+        populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID IN (2,9)")
         result = populated_db.cursor.fetchall()
-        assert result == [("Ik wil wat pasta","testen")]
+        assert result == [("Ik wil wat pasta",),("testen",)]
         logic_controller.close()
        
     
