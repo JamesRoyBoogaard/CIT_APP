@@ -60,7 +60,7 @@ class TestLogicController():
         sp = SentencePair("testen", "testing")
         logic_controller.update_sentence_pairs(1, sp)
 
-        populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID IS (1,8)")
+        populated_db.cursor.execute("SELECT DutchSentence FROM sentence_pairs WHERE ID IN (1,8)")
         result = populated_db.cursor.fetchall()
         assert result == [("Ik wil wat pasta","testen")]
         logic_controller.close()

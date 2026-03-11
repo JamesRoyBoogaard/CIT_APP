@@ -26,6 +26,10 @@ class LogicController():
         self.db_handler.add_sentence_pair(new_sentence_pair)
         #self.db_handler.close()
 
+    def get_all_sentence_pair(self):
+        return_list = self.db_handler.get_all_sentence_pair()
+        return return_list
+
     def revise(self, number_sentences):
         revision_list = self.db_handler.get_sentence_pairs(number_sentences)
         # self.db_handler.close()
