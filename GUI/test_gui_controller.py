@@ -2,12 +2,19 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import pytest
+from Logic.logic_controller import LogicController
+from Persistence.database_handler import DatabaseHandler
+from SentencePair import SentencePair
+from GUI.gui_controller import GUIController
+
 
 # setup for the tests
+
 
 # gui_controller testing section
 
 def test_run():
+
     return False
 
 # home_page testing section
