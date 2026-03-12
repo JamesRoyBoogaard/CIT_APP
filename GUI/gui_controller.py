@@ -1,3 +1,4 @@
+from Logic.logic_controller import LogicController
 
 class GUIController():
 
