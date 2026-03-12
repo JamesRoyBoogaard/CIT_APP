@@ -10,11 +10,6 @@ class DatabaseHandler():
         self.connection = sqlite3.connect(db_pth)
         self.cursor = self.connection.cursor()
         self.cursor.execute("Create Table If Not Exists sentence_pairs(ID INTEGER PRIMARY KEY AUTOINCREMENT, DutchSentence TEXT, EnglishSentence TEXT, LastReviewed DATETIME)")
-        
-    # def __init__(self, test_string, db_pth = ":memory:"):
-    #     self.connection = sqlite3.connect(db_pth)
-    #     self.cursor = self.connection.cursor()
-    #     self.cursor.execute("Create Table If Not Exists sentence_pairs(ID INTEGER PRIMARY KEY AUTOINCREMENT, DutchSentence TEXT, EnglishSentence TEXT, LastReviewed DATETIME)")
 
     def add_sentence_pair(self, sentence_pair):
         # Add sentence_pair to the db
@@ -30,7 +25,6 @@ class DatabaseHandler():
             self.cursor.execute("INSERT INTO sentence_pairs (DutchSentence, EnglishSentence, LastReviewed) VALUES (?,?,?)", new_tuple)
         self.connection.commit()
         
-
     def remove_sentence_pair(self, sentence_pair_id):
         #remove the sentence pair from the database that has sentence_pair_id as its primary key
         self.cursor.execute("DELETE FROM sentence_pairs WHERE ID = ?", (sentence_pair_id,))
