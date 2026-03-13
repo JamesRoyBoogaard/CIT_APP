@@ -18,6 +18,11 @@ def logic_controller(db):
     yield logic_controller
 
 @pytest.fixture
+def gui_controller(logic_controller):
+    gui_controller = GUIController(logic_controller)
+    yield gui_controller
+
+@pytest.fixture
 def populated_db(db):
     sentence_pairs = [SentencePair("Ik ga thuis", "I'm going home", '2026-03-05 12:30:40'),
     SentencePair("Ik wil wat pasta", "I want some pasta", '2026-01-05 10:30:40'),

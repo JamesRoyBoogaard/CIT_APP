@@ -14,7 +14,7 @@ from GUI.gui_controller import GUIController
 # gui_controller testing section
 
 def test_run():
-
+    
     return False
 
 # home_page testing section
@@ -31,23 +31,24 @@ def test_add_sentence_pairs_page():
     # assert that the window/scene/page has changed to the add_sentence_pairs_page
     return False
 
-# add_sentences_pairs_page testing section
+# # add_sentences_pairs_page testing section
 
-def test_add_sentence_pairs():
-    return False
+# def test_add_sentence_pairs():
+#     # assert that from the gui level 
+#     return False
 
-# modify_sentence_pairs_page testing section
+# # modify_sentence_pairs_page testing section
 
-def test_search_next():
-    return False
+# def test_search_next():
+#     return False
 
-def test_search_previous():
-    return False
+# def test_search_previous():
+#     return False
 
-def test_modify_sentence_pairs():
-    return False
+# def test_modify_sentence_pairs():
+#     return False
 
-# revision_page testing section
+# # revision_page testing section
 
-def test_revision():
-    return False
+# def test_revision():
+#     return False
