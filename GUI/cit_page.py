@@ -5,7 +5,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from Logic import logic_controller
 
-class CITPage(ABC):
+class CITPage(ABC,QtWidgets.QWidget):
 
     @abstractmethod
     def previous_page(self):

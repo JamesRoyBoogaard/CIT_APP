@@ -6,30 +6,46 @@ from Logic.logic_controller import LogicController
 from Persistence.database_handler import DatabaseHandler
 from SentencePair import SentencePair
 from GUI.gui_controller import GUIController
-
+from home_page import HomePage
+from modify_sentence_pairs_page import ModifySentencePairsPage
+from revision_page import RevisionPage
+from add_sentence_pairs_page import AddSentencePairsPage
 
 # setup for the tests
 
-
 # gui_controller testing section
-
-def test_run():
-    
-    return False
+def test_run(self, gui_controller):
+    # assert that the home page is the initial starting point
+    assert gui_controller.stack.currentWidget == HomePage()
+  
 
 # home_page testing section
 
-def test_modify_sentence_page():
+def test_modify_sentence_page(self, gui_controller):
     # assert that the window/scene/page has changed to the modify_sentence_page 
-    return False
+    assert gui_controller.stack.currentWidget == HomePage()
+    HomePage().navigate_modify_sentence_pairs_page()
+    assert gui_controller.stack.currentWidget == ModifySentencePairsPage()
 
-def test_revision_page():
+def test_revision_page(self, gui_controller):
     # assert that the window/scene/page has changed to the revision_page
-    return False
+    assert gui_controller.stack.currentWidget == HomePage()
+    HomePage().navigate_revision_page()
+    assert gui_controller.stack.currentWidget == RevisionPage()
 
-def test_add_sentence_pairs_page():
+def test_add_sentence_pairs_page(self, gui_controller):
     # assert that the window/scene/page has changed to the add_sentence_pairs_page
-    return False
+    assert gui_controller.stack.currentWidget == HomePage()
+    HomePage().navigate_add_sentence_pairs_page()
+    assert gui_controller.stack.currentWidget == AddSentencePairsPage()
+
+
+def test_return_to_previous_page(self, gui_controller):
+    assert gui_controller.stack.currentWidget == HomePage()
+    HomePage().navigate_modify_sentence_pairs_page()
+    assert gui_controller.stack.currentWidget == ModifySentencePairsPage()
+    ModifySentencePairsPage.previous_page()
+    assert gui_controller.stack.currentWidget == HomePage()
 
 # # add_sentences_pairs_page testing section
 
