@@ -1,4 +1,5 @@
 from cit_page import CITPage
+from Logic.logic_controller import LogicController
 
 class AddSentencePairsPage(CITPage):
 

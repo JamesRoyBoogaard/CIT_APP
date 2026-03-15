@@ -1,7 +1,8 @@
+import pytest
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import pytest
+
 from Logic.logic_controller import LogicController
 from Persistence.database_handler import DatabaseHandler
 from SentencePair import SentencePair
@@ -17,8 +18,7 @@ from add_sentence_pairs_page import AddSentencePairsPage
 def test_run(self, gui_controller):
     # assert that the home page is the initial starting point
     assert gui_controller.stack.currentWidget == HomePage()
-  
-
+    
 # home_page testing section
 
 def test_modify_sentence_page(self, gui_controller):

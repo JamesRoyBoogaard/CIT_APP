@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from PySide6.QtWidgets import QStackedWidget, QApplication
 from home_page import HomePage
 from modify_sentence_pairs_page import ModifySentencePairsPage
