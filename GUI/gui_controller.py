@@ -11,18 +11,19 @@ from Logic.logic_controller import LogicController
 class GUIController():
 
     def __init__(self):
-        self.app = QApplication(sys.argv)
+        self.app = QApplication([])
         self.stack = QStackedWidget()
         logic_controller = LogicController()
         home_page = HomePage()
         home_page.resize(900,900)
-        # self.stack.addWidget(RevisionPage(logic_controller))
+        #self.stack.addWidget(RevisionPage(logic_controller))
         self.stack.addWidget(home_page)
         # self.stack.addWidget(ModifySentencePairsPage(logic_controller))
         # self.stack.addWidget(AddSentencePairsPage(logic_controller))
         self.current_page = home_page
-        home_page.show()
+        self.stack.show()
 
     def run(self):
-        self.app.exec()
+        sys.exit(self.app.exec())
+        # self.app.exec()
     

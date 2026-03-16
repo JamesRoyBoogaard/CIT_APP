@@ -14,11 +14,28 @@ class HomePage(QtWidgets.QWidget):
         self.options_button = QtWidgets.QPushButton("Options")
 
         self.layout = QtWidgets.QVBoxLayout(self)
+
+        # self.top_assets = QtWidgets.QHBoxLayout(self)
+        # self.top_assets.addWidget(self.heading,alignment = QtCore.Qt.center)
+        # self.top_assets.addStretch()
+        # self.top_assets.addWidget(self.options_button)
+
+        # self.middle_assets = QtWidgets.QVBoxLayout(self)
+        # self.middle_assets.addWidget(self.revision_button, alignment=QtCore.Qt.center)
+        # self.middle_assets.addWidget(self.modify_sentences_button, alignment=QtCore.Qt.center)
+        # self.middle_assets.addWidget(self.add_sentences_button, alignment=QtCore.Qt.center)
+
+        # self.layout.addLayout(self.top_assets)
+        # self.layout.addLayout(self.middle_assets)
         self.layout.addWidget(self.heading)
+        self.layout.addStretch()
+        self.layout.addWidget(self.options_button)
+
         self.layout.addWidget(self.revision_button)
         self.layout.addWidget(self.modify_sentences_button)
         self.layout.addWidget(self.add_sentences_button)
-        self.layout.addWidget(self.options_button)
+
+        self.setLayout(self.layout)
 
         self.revision_button.pressed.connect(self.navigate_revision_page)
         self.revision_button.pressed.connect(self.navigate_modify_sentence_pairs_page)
