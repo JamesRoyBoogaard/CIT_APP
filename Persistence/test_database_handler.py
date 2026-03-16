@@ -9,37 +9,6 @@ import datetime
 
 class TestDatabaseHandler():
 
-    # #Setup
-    # @pytest.fixture
-    # def db(self):
-    #     mem_db = DatabaseHandler(":memory:")
-    #     yield mem_db
-    #     mem_db.close()
-
-    # #    sentence_pairs = [SentencePair("Ik ga thuis", "I'm going home", '2026-03-05 12:30:40'),
-    # #     SentencePair("Ik wil wat pasta", "I want some pasta", '2026-01-05 10:30:40'),
-    # #     SentencePair("er zit eimand aan die kant", "There is someone sitting in that corner", '2026-04-05 12:30:40'),
-    # #     SentencePair("Hoe heet je", "What is your name", '2026-01-05 11:20:40'),
-    # #     SentencePair("Toen ik 96 werd", "When I turned 96", '2026-03-05 12:30:30'),
-    # #     SentencePair("Je waarschijnlijk geen sluetal toch", "You probably dont have a key right?", '2026-01-05 12:30:40'),
-    # #     SentencePair("Er zijn hier zo veel mensen", "There are so many people here", '2026-03-05 12:30:10'),
-    # #     SentencePair("Ik hoevan oilifanten", "I love elephants", '2026-03-05 06:30:40')]
-    # @pytest.fixture
-    # def populated_db(self, db):
-    #     sentence_pairs = [SentencePair("Ik ga thuis", "I'm going home"),
-    #     SentencePair("Ik wil wat pasta", "I want some pasta", '2026-01-05 10:30:40'),
-    #     SentencePair("er zit eimand aan die kant", "There is someone sitting in that corner"),
-    #     SentencePair("Hoe heet je", "What is your name", '2026-01-05 11:20:40'),
-    #     SentencePair("Toen ik 96 werd", "When I turned 96", '2026-03-05 12:30:30'),
-    #     SentencePair("Je waarschijnlijk geen sluetal toch", "You probably dont have a key right?", '2026-01-05 12:30:40'),
-    #     SentencePair("Er zijn hier zo veel mensen", "There are so many people here", '2026-03-05 12:30:10'),
-    #     SentencePair("Ik hoevan oilifanten", "I love elephants", '2026-03-05 06:30:40')]
-
-    #     for sentence in sentence_pairs:
-    #         db.add_sentence_pair(sentence)
-            
-    #     return db
-    
     #Tests
     def test_persistence_handler_instantiate(self,db):
         db.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sentence_pairs'")
