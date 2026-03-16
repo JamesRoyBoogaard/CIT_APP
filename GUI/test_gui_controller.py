@@ -46,13 +46,23 @@ class TestGUIController():
         gui_controller.home_page.navigate_modify_sentence_pairs_page()
         assert gui_controller.stack.currentWidget == AddSentencePairsPage()
 
-
+    def test_return_to_home_page(self, gui_controller):
+        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        gui_controller.home_page.navigate_modify_sentence_pairs_page()
+        assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
+        gui_controller.current_page.home_page()
+        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        
     def test_return_to_previous_page(self, gui_controller):
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
         gui_controller.home_page.navigate_modify_sentence_pairs_page()
         assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
-        gui_controller.current_page.previous_page()
+        gui_controller.current_page.home_page()
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        gui_controller.current_page.previous_page()
+        assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
+
+
 
     # # add_sentences_pairs_page testing section
 
