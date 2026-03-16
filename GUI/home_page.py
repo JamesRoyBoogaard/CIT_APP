@@ -1,16 +1,12 @@
-from GUI.cit_page import CITPage
+from PySide6 import QtCore, QtWidgets, QtGui
 from Logic.logic_controller import LogicController
 
-class HomePage(CITPage):
+class HomePage(QtWidgets.QWidget):
 
     # def __init__(self):
     #     return self
     
     def previous_page(self):
-        return False
-
-
-    def home_page(self):
         return False
 
     def navigate_revision_page(self):
