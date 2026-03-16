@@ -20,9 +20,9 @@ def logic_controller(db):
     logic_controller = LogicController(db)
     yield logic_controller
 
-@pytest.fixture
-def gui_controller(logic_controller):
-    gui_controller = GUIController(logic_controller)
+@pytest.fixture(scope = "session")
+def gui_controller():
+    gui_controller = GUIController()
     yield gui_controller
 
 @pytest.fixture
