@@ -3,7 +3,7 @@ from Logic.logic_controller import LogicController
 
 class RevisionPage(QtWidgets.QWidget):
 
-    def __init__(self, p_logic_controller):
+    def __init__(self, p_logic_controller = None):
         super().__init__()
         self.resize(900,900)
         if p_logic_controller == None:

@@ -6,6 +6,7 @@ from Logic.logic_controller import LogicController
 from Persistence.database_handler import DatabaseHandler
 from SentencePair import SentencePair
 from GUI.gui_controller import GUIController
+from PySide6.QtWidgets import QApplication
 
 
 # setup for all the tests in CITApp
@@ -20,10 +21,16 @@ def logic_controller(db):
     logic_controller = LogicController(db)
     yield logic_controller
 
-@pytest.fixture(scope = "session")
-def gui_controller():
-    gui_controller = GUIController()
+@pytest.fixture(scope="session")
+def qapp():
+    app = QApplication.instance() or QApplication([])
+    yield app
+
+@pytest.fixture()
+def gui_controller(qapp):
+    gui_controller = GUIController(qapp)
     yield gui_controller
+    gui_controller.destroySingleton()
 
 @pytest.fixture
 def populated_db(db):

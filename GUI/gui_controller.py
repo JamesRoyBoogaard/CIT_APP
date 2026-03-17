@@ -10,8 +10,12 @@ from Logic.logic_controller import LogicController
 
 class GUIController():
 
-    def __init__(self):
-        self.app = QApplication([])
+    def __init__(self, p_app = None):
+        if p_app == None:
+            self.app = QApplication([])
+        else:
+            self.app = p_app
+            
         self.stack = QStackedWidget()
         logic_controller = LogicController()
         self.list_of_widgets = []
@@ -57,3 +61,9 @@ class GUIController():
 
     def setPrevious(self):
         self.setPage(self.list_of_widgets.pop())
+
+    def destroySingleton(self):
+        self.app.quit()
+        self.stack.destroy()
+        del self.stack
+        del self.app
