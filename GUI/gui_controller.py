@@ -14,6 +14,8 @@ class GUIController():
         self.app = QApplication([])
         self.stack = QStackedWidget()
         logic_controller = LogicController()
+        self.list_of_widgets = []
+
         self.home_page = HomePage()
         self.revision_page = RevisionPage(logic_controller)
         self.modify_sentence_pairs_page = ModifySentencePairsPage(logic_controller)
@@ -24,10 +26,10 @@ class GUIController():
         self.stack.addWidget(self.revision_page)
         self.stack.addWidget(self.modify_sentence_pairs_page)
         self.stack.addWidget(self.add_sentence_pairs_page)
-
-        self.navigation()
-
+        
+        # self.setPage(1)
         self.current_page = self.home_page
+        self.navigation()
         self.stack.show()
 
     def run(self):
@@ -35,8 +37,17 @@ class GUIController():
         # self.app.exec()
     
     def navigation(self):
-        self.home_page.revision_button.clicked.connect(lambda: self.stack.setCurrentIndex(1))
-        self.home_page.modify_sentences_button.clicked.connect(lambda: self.stack.setCurrentIndex(2))
-        self.home_page.add_sentences_button.clicked.connect(lambda: self.stack.setCurrentIndex(3))
+        # self.home_page.revision_button.clicked.connect(lambda: self.stack.setCurrentIndex(1))
+        self.home_page.revision_button.clicked.connect(lambda: self.setPage(1))
+        self.home_page.modify_sentences_button.clicked.connect(lambda: self.setPage(2))
+        self.home_page.add_sentences_button.clicked.connect(lambda: self.setPage(3))
+        self.home_page.previous_page_button.clicked.connect(lambda: self.setPage(self.list_of_widgets.pop()))
 
         # Then do the same for all navigation for each of the pages
+
+    def setPage(self, p_page_index):
+        # add the p_page_index to the list and set it to that page index and then use this method as a lambda
+        self.list_of_widgets.append(self.stack.currentIndex())
+        self.stack.setCurrentIndex(p_page_index)
+        self.current_page = self.stack.currentWidget()
+      

@@ -10,18 +10,20 @@ class HomePage(QtWidgets.QWidget):
         self.resize(900,900)
         # self.logic_controller = p_logic_controller
         # now we can set up the three buttons and there tests as well as the menu and the heading
-        stack_list = []
+        self.stack_list = []
         self.heading = QtWidgets.QLabel("Welcome",
                                      alignment=QtCore.Qt.AlignmentFlag.AlignTop)
         self.revision_button = QtWidgets.QPushButton("Revise")
         self.modify_sentences_button = QtWidgets.QPushButton("Modify Sentence Pairs")
         self.add_sentences_button = QtWidgets.QPushButton("Add Sentence Pairs")
         self.options_button = QtWidgets.QPushButton("Options")
+        self.previous_page_button = QtWidgets.QPushButton("Back")
 
         self.layout = QtWidgets.QVBoxLayout(self)
 
         self.layout.addWidget(self.heading)
         self.layout.addStretch()
+        self.layout.addWidget(self.previous_page_button)
         self.layout.addWidget(self.options_button)
 
         self.layout.addWidget(self.revision_button)
@@ -54,7 +56,7 @@ class HomePage(QtWidgets.QWidget):
     #     return self.navigate_add_sentence_pairs_page
 
     @QtCore.Slot()
-    def options():
+    def options(self):
         # handle the drop down menu
         # Can create a button grouping for inside the options drop down for the home and sound toggle
         return False
