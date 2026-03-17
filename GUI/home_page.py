@@ -1,9 +1,9 @@
 from PySide6 import QtCore, QtWidgets
 
 class HomePage(QtWidgets.QWidget):
-    navigate_revision_page = QtCore.Signal()
-    navigate_add_sentence_pairs_page = QtCore.Signal()
-    navigate_modify_sentence_pairs_page = QtCore.Signal()
+    # navigate_revision_page = QtCore.Signal()
+    # navigate_add_sentence_pairs_page = QtCore.Signal()
+    # navigate_modify_sentence_pairs_page = QtCore.Signal()
 
     def __init__(self):
         super().__init__()
@@ -33,6 +33,6 @@ class HomePage(QtWidgets.QWidget):
         self.layout.addWidget(self.previous_page_button)
    
 
-        self.revision_button.pressed.connect(self.navigate_revision_page.emit)
-        self.modify_sentences_button.pressed.connect(self.navigate_modify_sentence_pairs_page.emit)
-        self.add_sentences_button.pressed.connect(self.navigate_add_sentence_pairs_page.emit)
+        # self.revision_button.pressed.connect(self.navigate_revision_page.emit)
+        # self.modify_sentences_button.pressed.connect(self.navigate_modify_sentence_pairs_page.emit)
+        # self.add_sentences_button.pressed.connect(self.navigate_add_sentence_pairs_page.emit)

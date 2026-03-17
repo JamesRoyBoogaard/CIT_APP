@@ -21,7 +21,6 @@ class TestGUIController():
         assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         
     # home_page testing section
-
     def test_modify_sentence_page(self, gui_controller):
         assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         gui_controller.setPage(2)

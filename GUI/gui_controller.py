@@ -47,7 +47,8 @@ class GUIController():
         self.home_page.previous_page_button.clicked.connect(lambda: self.setPrevious())
 
         # Then do the same for all navigation for each of the pages
-        
+        self.revision_page.previous_page_button.clicked.connect(lambda: self.setPrevious())
+        self.revision_page.home_button.clicked.connect(lambda: self.setHome())
 
     def setPage(self, p_page_index):
         # add the p_page_index to the list and set it to that page index and then use this method as a lambda
