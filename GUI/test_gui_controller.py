@@ -27,8 +27,7 @@ class TestGUIController():
     # home_page testing section
 
     def test_modify_sentence_page(self, gui_controller):
-        # assert that the window/scene/page has changed to the modify_sentence_page 
-        # assert gui_controller.stack.currentWidget == HomePage()
+        # WE NEED TO DESTROY THE APPLICATION BEFORE EACH TEST CAUSE THE CONTEXT IS CARRYING OVER
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
         gui_controller.setPage(2)
         assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
@@ -38,7 +37,7 @@ class TestGUIController():
         # assert that the window/scene/page has changed to the revision_page
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
         gui_controller.setPage(1)
-        assert gui_controller.stack.currentWidget == RevisionPage()
+        assert type(gui_controller.stack.currentWidget()) == type(RevisionPage())
 
     def test_add_sentence_pairs_page(self, gui_controller):
         # assert that the window/scene/page has changed to the add_sentence_pairs_page

@@ -37,23 +37,6 @@ class HomePage(QtWidgets.QWidget):
         self.revision_button.pressed.connect(self.navigate_add_sentence_pairs_page.emit)
         self.revision_button.pressed.connect(self.options)
 
-    @QtCore.Slot()
-    def previous_page(self):
-        # Go to the previously documented Widget and if that doesnt exist stay on home_page
-        return False
-    
-    # @QtCore.Slot()
-    # def navigate_revision_page(self):
-    #     return self.navigate_revision_page
-
-
-    # @QtCore.Slot()
-    # def navigate_modify_sentence_pairs_page(self):
-    #     return self.navigate_modify_sentence_pairs_page
-    
-    # @QtCore.Slot()
-    # def navigate_add_sentence_pairs_page(self):
-    #     return self.navigate_add_sentence_pairs_page
 
     @QtCore.Slot()
     def options(self):

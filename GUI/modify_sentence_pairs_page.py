@@ -3,9 +3,12 @@ from Logic.logic_controller import LogicController
 
 class ModifySentencePairsPage(QtWidgets.QWidget):
 
-    def __init__(self, p_logic_controller):
+    def __init__(self, p_logic_controller = None):
         super().__init__()
-        self.logic_controller = p_logic_controller
+        if p_logic_controller == None :
+            self.logic_controller = LogicController
+        else:  
+            self.logic_controller = p_logic_controller
 
 
     def previous_page(self):
