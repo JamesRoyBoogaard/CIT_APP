@@ -6,7 +6,11 @@ class RevisionPage(QtWidgets.QWidget):
     def __init__(self, p_logic_controller):
         super().__init__()
         self.resize(900,900)
-        self.logic_controller = p_logic_controller
+        if p_logic_controller == None:
+            self.logic_controller = LogicController()
+        else:
+            self.logic_controller = p_logic_controller
+            
         self.heading = QtWidgets.QLabel("Revise",
                                 alignment=QtCore.Qt.AlignmentFlag.AlignTop)
         self.layout = QtWidgets.QVBoxLayout(self)

@@ -43,7 +43,7 @@ class TestGUIController():
         # assert that the window/scene/page has changed to the add_sentence_pairs_page
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
         gui_controller.setPage(3)
-        assert gui_controller.stack.currentWidget == AddSentencePairsPage()
+        assert type(gui_controller.stack.currentWidget) == type(AddSentencePairsPage())
 
     def test_return_to_home_page(self, gui_controller):
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
