@@ -18,49 +18,42 @@ class TestGUIController():
 
     # gui_controller testing section
     def test_run(self, gui_controller):
-        # assert that the home page is the initial starting point
-        # home_page = HomePage()
-        # hp_type = type(home_page)
-        # assert type(gui_controller.stack.currentWidget()) == hp_type
-        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         
     # home_page testing section
 
     def test_modify_sentence_page(self, gui_controller):
-        # WE NEED TO DESTROY THE APPLICATION BEFORE EACH TEST CAUSE THE CONTEXT IS CARRYING OVER
-        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         gui_controller.setPage(2)
-        assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
-        # assert gui_controller.stack.currentWidget == ModifySentencePairsPage()
+        assert isinstance(gui_controller.stack.currentWidget(), ModifySentencePairsPage)
 
     def test_revision_page(self, gui_controller):
         # assert that the window/scene/page has changed to the revision_page
-        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         gui_controller.setPage(1)
-        assert type(gui_controller.stack.currentWidget()) == type(RevisionPage())
+        assert isinstance(gui_controller.stack.currentWidget(), RevisionPage)
 
     def test_add_sentence_pairs_page(self, gui_controller):
         # assert that the window/scene/page has changed to the add_sentence_pairs_page
-        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         gui_controller.setPage(3)
-        assert type(gui_controller.stack.currentWidget()) == type(AddSentencePairsPage())
+        assert isinstance(gui_controller.stack.currentWidget(), AddSentencePairsPage)
 
     def test_return_to_home_page(self, gui_controller):
-        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         gui_controller.setPage(2)
-        assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
+        assert isinstance(gui_controller.stack.currentWidget(), ModifySentencePairsPage)
         gui_controller.setHome()
-        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         
     def test_return_to_previous_page(self, gui_controller):
-        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         gui_controller.setPage(2)
-        assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
+        assert isinstance(gui_controller.stack.currentWidget(), ModifySentencePairsPage)
         gui_controller.setHome()
-        assert type(gui_controller.stack.currentWidget()) == type(HomePage())
+        assert isinstance(gui_controller.stack.currentWidget(), HomePage)
         gui_controller.setPrevious()
-        assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
-
+        assert isinstance(gui_controller.stack.currentWidget(), ModifySentencePairsPage)
 
     # # add_sentences_pairs_page testing section
 
