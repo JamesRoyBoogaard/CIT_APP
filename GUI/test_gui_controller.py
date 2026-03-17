@@ -30,36 +30,36 @@ class TestGUIController():
         # assert that the window/scene/page has changed to the modify_sentence_page 
         # assert gui_controller.stack.currentWidget == HomePage()
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
-        gui_controller.home_page.navigate_modify_sentence_pairs_page()
+        gui_controller.setPage(2)
         assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
         # assert gui_controller.stack.currentWidget == ModifySentencePairsPage()
 
     def test_revision_page(self, gui_controller):
         # assert that the window/scene/page has changed to the revision_page
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
-        gui_controller.home_page.navigate_modify_sentence_pairs_page()
+        gui_controller.setPage(1)
         assert gui_controller.stack.currentWidget == RevisionPage()
 
     def test_add_sentence_pairs_page(self, gui_controller):
         # assert that the window/scene/page has changed to the add_sentence_pairs_page
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
-        gui_controller.home_page.navigate_modify_sentence_pairs_page()
+        gui_controller.setPage(3)
         assert gui_controller.stack.currentWidget == AddSentencePairsPage()
 
     def test_return_to_home_page(self, gui_controller):
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
-        gui_controller.home_page.navigate_modify_sentence_pairs_page()
+        gui_controller.setPage(2)
         assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
-        gui_controller.current_page.home_page()
+        gui_controller.setHome()
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
         
     def test_return_to_previous_page(self, gui_controller):
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
-        gui_controller.home_page.navigate_modify_sentence_pairs_page()
+        gui_controller.setPage(2)
         assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
-        gui_controller.current_page.home_page()
+        gui_controller.setHome()
         assert type(gui_controller.stack.currentWidget()) == type(HomePage())
-        gui_controller.current_page.previous_page()
+        gui_controller.setPrevious()
         assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
 
 

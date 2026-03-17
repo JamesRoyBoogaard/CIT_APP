@@ -41,9 +41,10 @@ class GUIController():
         self.home_page.revision_button.clicked.connect(lambda: self.setPage(1))
         self.home_page.modify_sentences_button.clicked.connect(lambda: self.setPage(2))
         self.home_page.add_sentences_button.clicked.connect(lambda: self.setPage(3))
-        self.home_page.previous_page_button.clicked.connect(lambda: self.setPage(self.list_of_widgets.pop()))
+        self.home_page.previous_page_button.clicked.connect(lambda: self.setPrevious())
 
         # Then do the same for all navigation for each of the pages
+        
 
     def setPage(self, p_page_index):
         # add the p_page_index to the list and set it to that page index and then use this method as a lambda
@@ -51,3 +52,8 @@ class GUIController():
         self.stack.setCurrentIndex(p_page_index)
         self.current_page = self.stack.currentWidget()
       
+    def setHome(self):
+        self.setPage(0)
+
+    def setPrevious(self):
+        self.setPage(self.list_of_widgets.pop())
