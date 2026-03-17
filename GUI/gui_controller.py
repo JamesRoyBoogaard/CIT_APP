@@ -60,7 +60,9 @@ class GUIController():
         self.setPage(0)
 
     def setPrevious(self):
-        self.setPage(self.list_of_widgets.pop())
+        if self.list_of_widgets:
+            self.setPage(self.list_of_widgets.pop())
+        
 
     def destroySingleton(self):
         self.app.quit()
