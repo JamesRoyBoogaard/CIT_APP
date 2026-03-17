@@ -7,39 +7,33 @@ class HomePage(QtWidgets.QWidget):
 
     def __init__(self):
         super().__init__()
-        self.resize(900,900)
-        # self.logic_controller = p_logic_controller
-        # now we can set up the three buttons and there tests as well as the menu and the heading
+        self.setFixedSize(1200,900)
+
         self.stack_list = []
         self.heading = QtWidgets.QLabel("Welcome",
                                      alignment=QtCore.Qt.AlignmentFlag.AlignTop)
-        self.revision_button = QtWidgets.QPushButton("Revise")
+        self.previous_page_button = QtWidgets.QPushButton("Back")
         self.modify_sentences_button = QtWidgets.QPushButton("Modify Sentence Pairs")
         self.add_sentences_button = QtWidgets.QPushButton("Add Sentence Pairs")
+        self.revision_button = QtWidgets.QPushButton("Revise")
         self.options_button = QtWidgets.QPushButton("Options")
-        self.previous_page_button = QtWidgets.QPushButton("Back")
+        
+
+        self.drop_down = QtWidgets.QMenu(self)
+        self.drop_down.addAction("Home", lambda: print("You are already at home"))
+        self.drop_down.addAction("Sound",lambda: print("Sound has been toggled"))
+        self.options_button.setMenu(self.drop_down)
 
         self.layout = QtWidgets.QVBoxLayout(self)
-
         self.layout.addWidget(self.heading)
-        self.layout.addStretch()
-        self.layout.addWidget(self.previous_page_button)
         self.layout.addWidget(self.options_button)
-
+        self.layout.addStretch()
         self.layout.addWidget(self.revision_button)
         self.layout.addWidget(self.modify_sentences_button)
         self.layout.addWidget(self.add_sentences_button)
-
-        self.setLayout(self.layout)
+        self.layout.addWidget(self.previous_page_button)
+   
 
         self.revision_button.pressed.connect(self.navigate_revision_page.emit)
-        self.revision_button.pressed.connect(self.navigate_modify_sentence_pairs_page.emit)
-        self.revision_button.pressed.connect(self.navigate_add_sentence_pairs_page.emit)
-        self.revision_button.pressed.connect(self.options)
-
-
-    @QtCore.Slot()
-    def options(self):
-        # handle the drop down menu
-        # Can create a button grouping for inside the options drop down for the home and sound toggle
-        return False
+        self.modify_sentences_button.pressed.connect(self.navigate_modify_sentence_pairs_page.emit)
+        self.add_sentences_button.pressed.connect(self.navigate_add_sentence_pairs_page.emit)
