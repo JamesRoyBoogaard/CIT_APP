@@ -62,7 +62,6 @@ class TestGUIController():
         assert type(gui_controller.stack.currentWidget()) == type(ModifySentencePairsPage())
 
 
-
     # # add_sentences_pairs_page testing section
 
     # def test_add_sentence_pairs():
