@@ -25,7 +25,6 @@ class GUIController():
         self.modify_sentence_pairs_page = ModifySentencePairsPage(logic_controller)
         self.add_sentence_pairs_page = AddSentencePairsPage(logic_controller)
 
-        # home_page.resize(900,900)
         self.stack.addWidget(self.home_page)
         self.stack.addWidget(self.revision_page)
         self.stack.addWidget(self.modify_sentence_pairs_page)

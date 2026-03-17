@@ -9,7 +9,6 @@ class HomePage(QtWidgets.QWidget):
         super().__init__()
         self.setFixedSize(1200,900)
 
-        self.stack_list = []
         self.heading = QtWidgets.QLabel("Welcome",
                                      alignment=QtCore.Qt.AlignmentFlag.AlignTop)
         self.previous_page_button = QtWidgets.QPushButton("Back")
