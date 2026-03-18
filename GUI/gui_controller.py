@@ -40,15 +40,19 @@ class GUIController():
         # self.app.exec()
     
     def navigation(self):
-        # self.home_page.revision_button.clicked.connect(lambda: self.stack.setCurrentIndex(1))
+        # home_page widget
         self.home_page.revision_button.clicked.connect(lambda: self.setPage(1))
         self.home_page.modify_sentences_button.clicked.connect(lambda: self.setPage(2))
         self.home_page.add_sentences_button.clicked.connect(lambda: self.setPage(3))
         self.home_page.previous_page_button.clicked.connect(lambda: self.setPrevious())
 
-        # Then do the same for all navigation for each of the pages
+        # revision_page widget
         self.revision_page.previous_page_button.clicked.connect(lambda: self.setPrevious())
         self.revision_page.home_button.clicked.connect(lambda: self.setHome())
+
+        # add_sentence_pair_page widget
+        self.add_sentence_pairs_page.previous_page_button.clicked.connect(lambda: self.setPrevious())
+        self.add_sentence_pairs_page.home_button.clicked.connect(lambda: self.setHome())
 
     def setPage(self, p_page_index):
         # add the p_page_index to the list and set it to that page index and then use this method as a lambda
