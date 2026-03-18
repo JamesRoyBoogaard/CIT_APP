@@ -17,6 +17,8 @@ class AddSentencePairsPage(QtWidgets.QWidget):
         self.previous_page_button = QtWidgets.QPushButton("Back")
         self.home_button = QtWidgets.QPushButton("Home")
         self.add_sentence_pair_button = QtWidgets.QPushButton("Add")
+        self.english_sentence_input = QtWidgets.QTextEdit(placeholderText= "Enter english sentence")
+        self.dutch_sentence_input = QtWidgets.QTextEdit(placeholderText= "Enter the dutch equivalent")
         self.options_button = QtWidgets.QPushButton("Options")
         
 
@@ -30,6 +32,8 @@ class AddSentencePairsPage(QtWidgets.QWidget):
         self.layout.addWidget(self.heading)
         self.layout.addWidget(self.previous_page_button)
         self.layout.addWidget(self.options_button)
+        self.layout.addWidget(self.english_sentence_input)
+        self.layout.addWidget(self.dutch_sentence_input)
         self.layout.addWidget(self.add_sentence_pair_button)
 
     @QtCore.Slot()
