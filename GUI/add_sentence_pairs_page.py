@@ -1,5 +1,6 @@
 from PySide6 import QtCore, QtWidgets, QtGui
 from Logic.logic_controller import LogicController
+from SentencePair import SentencePair
 
 class AddSentencePairsPage(QtWidgets.QWidget):
 
@@ -36,7 +37,26 @@ class AddSentencePairsPage(QtWidgets.QWidget):
         self.layout.addWidget(self.dutch_sentence_input)
         self.layout.addWidget(self.add_sentence_pair_button)
 
-    @QtCore.Slot()
-    def add_sentence_pair(self, p_sentence_pair):
-        self.logic_controller.add_sentence_pair(p_sentence_pair)
+        self.add_sentence_pair_button.clicked.connect(self.gui_add_sentence_pair)
 
+    @QtCore.Slot()
+    def gui_add_sentence_pair(self):
+        # self.english_sentence_input.selectAll()
+        # self.english_sentence_input.copy()
+        english_sentence = self.english_sentence_input.toPlainText()
+        # print(english_sentence)
+        # self.dutch_sentence_input.selectAll()
+        # self.dutch_sentence_input.copy()
+        dutch_sentence = self.dutch_sentence_input.toPlainText()
+        # print(dutch_sentence)
+
+        if(english_sentence == None or dutch_sentence == None):
+            print("please enter a valid input in both input fields")
+        else:  
+            sentence_pair = SentencePair(english_sentence,dutch_sentence)
+            # print(str(len(self.logic_controller.get_all_sentence_pairs())))
+            self.logic_controller.add_sentence_pair(sentence_pair)
+            # print(str(len(self.logic_controller.get_all_sentence_pairs())))
+            self.english_sentence_input.clear()
+            self.dutch_sentence_input.clear()
+            
